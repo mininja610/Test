@@ -27,14 +27,16 @@
                         <a>sentence</a>
                         <div class=post_date>
                             @foreach($post_date as $post)
+                            
                             <div class=post></div>
                                 <a class=id>{{$post->id}}</a>
                                 <h2 class=title>{{$post->title}}</h2>
                                 <p class=body>{{$post->body}}</p>
                         </div>
                             @endforeach
+                            
                     </div>
-                    
+                    {{ $post_date->links() }}
                 </div>
                 
                 
