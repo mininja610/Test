@@ -11,7 +11,7 @@
     <body>
         <header>
             <!--<img class=logo url=>-->
-            <h1>Blog Name</h1>
+            <h1>Blog name</h1>
             
             <div class=topic>
                 
@@ -23,20 +23,19 @@
                 <div class=posts>
                     <div class=post>
                         
-                        <h2>Article</h2>
+                         <h2>{{ $post->title }}</h2> <br>
                         <a>sentence</a>
                         <div class=post_date>
-                            @foreach($post_date as $post)
+                            <p>{{ $post->body }}</p> 
+                           
                             
                             <div class=post></div>
-                                <a class=id>{{$post->id}}</a>
-                                <a class=title href="posts/{{$post->id}}">{{$post->title}}</a>
-                                <p class=body>{{$post->body}}</p>
+                               
                         </div>
-                            @endforeach
+                        <a href="/">戻る</a>  
                             
                     </div>
-                    {{ $post_date->links() }}
+               
                 </div>
                 
                 
