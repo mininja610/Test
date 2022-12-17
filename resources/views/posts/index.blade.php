@@ -30,7 +30,7 @@
                             
                             <div class=post></div>
                                 <a class=id>{{$post->id}}</a>
-                                <h2 class=title>{{$post->title}}</h2>
+                                <a class=title href="posts/{{$post->id}}">{{$post->title}}</a>
                                 <p class=body>{{$post->body}}</p>
                         </div>
                             @endforeach

@@ -23,8 +23,7 @@
                 <div class=posts>
                     <div class=post>
                         
-                        <h2>title </h2>
-                         {{ $post->title }}
+                         <h2>{{ $post->title }}</h2> <br>
                         <a>sentence</a>
                         <div class=post_date>
                             <p>{{ $post->body }}</p> 
