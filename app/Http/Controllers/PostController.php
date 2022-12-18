@@ -9,12 +9,18 @@ class PostController extends Controller
 {
  public function index(Post $post)//インポートしたPostをインスタンス化して$postとして使用。
 {
-    $post_date = $post->get10(2);
+    $post_date = $post->get10(5);
     
    return view ('posts/index',compact('post_date'));
 }
  public function show(Post $post)
  {
    return view('posts/show',compact('post'));
+ }   
+
+
+    public function create()
+ {
+   return view('posts/create');
  }   
 }

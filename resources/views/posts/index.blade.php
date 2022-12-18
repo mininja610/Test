@@ -21,6 +21,7 @@
             
             <div class=wrapper>
                 <div class=posts>
+                    <a href='posts/create'>投稿する</a>
                     <div class=post>
                         
                         <h2>Article</h2>
