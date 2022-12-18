@@ -6,7 +6,12 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
-{
+{ 
+    
+    protected $fillable = [
+    'title',
+    'body',
+];
     public function get10($limit =10){
         
         return $this->latest()->limit($limit)->paginate($limit);
