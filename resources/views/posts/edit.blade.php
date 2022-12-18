@@ -21,22 +21,23 @@
             </li>
         </header>
         
-        <body>
-           <form action="/posts" method="POST"> 
-           
-           @csrf
-              
-            <div class="title">
-                <h2>Title</h2>
-                <input type="text" name="post[title]" placeholder="タイトル" value="{{ $post->title }}"/>
-                <p style ="color:red">{{ $errors->first('post.title') }}</p>
+      
+    <h1 class="title">編集画面</h1>
+    <div class="content">
+        <form action="/posts/{{ $post->id }}" method="POST">
+            @csrf
+            @method('PUT')
+            <div class='content__title'>
+                <h2>タイトル</h2>
+                <input type='text' name='post[title]' value="{{ $post->title }}">
+                 <p style ="color:red">{{ $errors->first('post.title') }}</p>
             </div>
-            <div class="body">
-                <h2>Body</h2>
-                <textarea name="post[body]" placeholder="今日も1日お疲れさまでした。"> {{ $post->body }}</textarea>
-                <p style ="color:red">{{ $errors->first('post.body') }}</p>
+            <div class='content__body'>
+                <h2>本文</h2>
+                <input type='text' name='post[body]' value="{{ $post->body }}">
+                 <p style ="color:red">{{ $errors->first('post.body') }}</p>
             </div>
-            <input type="submit" value="保存"/>
+            <input type="submit" value="保存">
         </form>
-             <a href="/">戻る</a>  
-        </body>
+    </div>
+</body>

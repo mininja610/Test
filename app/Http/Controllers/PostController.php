@@ -36,4 +36,10 @@ class PostController extends Controller
   
   return view('posts/edit', compact('post'));
  }
+ public function update(PostRequest $request, Post $post){
+  
+  $update = $request['post'];
+  $post->fill($update)->save();
+   return redirect('posts/' . $post->id);
+ }
 }
