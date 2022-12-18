@@ -2,14 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\PostRequest;
 use App\Models\Post;
+
+
 
 class PostController extends Controller
 {
+   
  public function index(Post $post)//インポートしたPostをインスタンス化して$postとして使用。
 {
-    $post_date = $post->get10(2);
+    $post_date = $post->get10(5);
     
    return view ('posts/index',compact('post_date'));
 }
@@ -17,4 +20,19 @@ class PostController extends Controller
  {
    return view('posts/show',compact('post'));
  }   
+
+
+    public function create()
+ {
+   return view('posts/create');
+ }   
+ public function store(PostRequest $request, Post $post)
+ {
+ $input = $request['post'];
+    $post->fill($input)->save();
+    return redirect('posts/' . $post->id);
+ 
+ 
+  
+ }
 }
