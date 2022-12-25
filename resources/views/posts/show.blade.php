@@ -29,15 +29,15 @@
                             <p>{{ $post->body }}</p> 
                            
                             
-                            <div class=post></div>
-                               
+                            <div class=post></div><br>
+                              <a href="/categories/{{ $post->category->id }}">{{ $post->category->name }}</a>
                         </div>
                         <a href="/">戻る</a>  
                         <div class="edit"><a href="/posts/{{ $post->id }}/edit">edit</a></div>
                     </div>
                
                 </div>
-                
+             
                 
                 
                 

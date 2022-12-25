@@ -36,6 +36,15 @@
                 <textarea name="post[body]" placeholder="今日も1日お疲れさまでした。"> {{ old('post.body') }}</textarea>
                 <p style ="color:red">{{ $errors->first('post.body') }}</p>
             </div>
+            <div class="category">
+                <select name="post[category_id]">
+                    <option value="">カテゴリーを選択してください</option>
+                    @foreach($categories as $category)
+                    <option value="{{$category->id}}">{{$category->name}}</option>
+                    @endforeach
+                </select>
+                
+            </div>
             <input type="submit" value="投稿"/>
         </form>
             <br>
