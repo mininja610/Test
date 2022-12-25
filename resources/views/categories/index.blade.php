@@ -32,9 +32,8 @@
                             <div class=post></div>
                                 <a class=id>{{$post->id}}</a>
                                 <a class=title href="posts/{{$post->id}}">{{$post->title}}</a><br>
-                               
+                                <a class=category href="/">{{$post->category->name}}</a>
                                 <p class=body>{{$post->body}}</p> 
-                                <a href="/categories/{{ $post->category->id }}">{{ $post->category->name }}</a>
                                 <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post">
                                     @csrf
                                     @method('DELETE')
@@ -51,20 +50,6 @@
                 
                 
             </div>
-            
-       <script>
-      
-    function deletePost(id) {
-      
-
-        if (confirm('削除すると復元できません。\n本当に削除しますか？')) {
-            document.getElementById(`form_${id}`).submit();
-        }
-    }
-</script>
-           
-       </script>
-        
         
         
     </body>

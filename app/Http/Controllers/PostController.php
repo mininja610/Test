@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\PostRequest;
 use App\Models\Post;
+use App\Models\Category;
 
 
 
@@ -22,9 +23,10 @@ class PostController extends Controller
  }   
 
 
-    public function create()
+    public function create(Category $category)
  {
-   return view('posts/create');
+  $categories = $category->get();
+   return view('posts/create',compact('categories'));
  }   
  public function store(PostRequest $request, Post $post)
  {

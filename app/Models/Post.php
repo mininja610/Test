@@ -13,9 +13,15 @@ class Post extends Model
     protected $fillable = [
     'title',
     'body',
+    'category_id',
 ];
     public function get10($limit =10){
         
         return $this->latest()->limit($limit)->paginate($limit);
+    }
+    public function category(){
+        
+        return $this->belongsTo(Category::class);
+        
     }
 }
