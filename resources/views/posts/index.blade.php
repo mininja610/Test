@@ -9,24 +9,27 @@
         <!-- Fonts -->
         <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     <body>
-        <header>
+     
             <!--<img class=logo url=>-->
-            <h1>Blog Name</h1>
+           <x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+           Index
+        </h2>
+    </x-slot>
             
             <div class=topic>
                 
             </div>
-        </header>
       
-            
+    
             <div class=wrapper>
                 <div class=posts>
                     <a href='posts/create'>投稿する</a>
                     <div class=post>
                         
-                        <h2>Article</h2>
-                        <a>sentence</a>
-                        <div class=post_date>
+                     
+                       
                             @foreach($post_date as $post)
                             
                             <div class=post></div>
@@ -40,16 +43,19 @@
                                     @method('DELETE')
                                     <button type="button" onclick="deletePost({{ $post->id }})">delete</button> 
                                 </form>
-                        </div>
+                                
+                       
                             @endforeach
-                            
+                            <br>
+                     <h2 class="font-semibold text-xl text-gray-800 leading-tight"> 
+                        ログインユーザー：{{ Auth::user()->name }}
+                </h2> 
                     </div>
-                    {{ $post_date->links() }}
+                    {{$post_date->links()}}
                 </div>
                 
-                
-                
-                
+               
+             
             </div>
             
        <script>
@@ -64,7 +70,9 @@
 </script>
            
        </script>
-        
+          
+               </x-app-layout>  
         
         
     </body>
+    
